@@ -14,10 +14,12 @@ export function App() {
     inputRefForChild1.current.style.color = "white";
     inputRefForChild1.current.value = "gajbhiye";
   };
+
+  //when input is in child and button is in ur parent, u should send a reference from parent to child.
   const handleInputChangeChild3 = () => {
     inputRefForChild3.current.style.backgroundColor = "black";
     inputRefForChild3.current.style.color = "white";
-    inputRefForChild3.current.value = "gajbhiye";
+    inputRefForChild3.current.value = "value from forwardRef";
   };
   return (
     <>
