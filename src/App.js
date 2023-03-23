@@ -1,7 +1,9 @@
 import { useRef, forwardRef } from "react";
+import MyChild3 from "./MyChild3";
 export function App() {
   const inputRef = useRef(null);
   const inputRefForChild1 = useRef(null);
+  const inputRefForChild3 = useRef(null);
   const handleInputChange = () => {
     inputRef.current.style.backgroundColor = "green";
     inputRef.current.style.color = "white";
@@ -11,6 +13,11 @@ export function App() {
     inputRefForChild1.current.style.backgroundColor = "black";
     inputRefForChild1.current.style.color = "white";
     inputRefForChild1.current.value = "gajbhiye";
+  };
+  const handleInputChangeChild3 = () => {
+    inputRefForChild3.current.style.backgroundColor = "black";
+    inputRefForChild3.current.style.color = "white";
+    inputRefForChild3.current.value = "gajbhiye";
   };
   return (
     <>
@@ -36,6 +43,10 @@ export function App() {
       <Mychild2>
         <h1>hi all, I m child2 content residing inside child2 now.</h1>
       </Mychild2>
+      <MyChild3 ref={inputRefForChild3} />
+      <button onClick={handleInputChangeChild3}>
+        Change input from child3
+      </button>
     </>
   );
 }
